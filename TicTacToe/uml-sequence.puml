@@ -1,0 +1,19 @@
+@startuml
+
+Game -> GameLogic: nextField()
+GameLogic -> Printer: "Wähle ein Feld"
+GameLogic -> Scanner: nextInt()
+Scanner --> GameLogic: int z.B. 1
+GameLogic -> PlayerManagement: getNextPlayer()
+PlayerManagement --> GameLogic: "x"
+
+GameLogic -> GameBoard: setField(int 1, String x)
+GameBoard --> GameLogic: success, "true"
+
+GameLogic -> GameLogic: hasWon(), "true"
+
+GameLogic -> Printer: "Player x hat gewonnen"
+
+GameLogic -> Game
+
+@enduml

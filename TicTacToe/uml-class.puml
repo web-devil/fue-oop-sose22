@@ -1,0 +1,31 @@
+@startuml
+class Scanner {
+}
+
+class GameBoard {
+   void print()
+   Boolean setField(Integer fieldIndex, String player)
+}
+
+class PlayerManagement {
+   String getNextPlayer()
+}
+
+class GameLogic {
+   private Boolean hasWon()
+   public void nextField()
+}
+GameLogic -> Scanner: nextInt()
+GameLogic -> PlayerManagement: getNextPlayer()
+GameLogic -> GameBoard: setField()
+
+class Game {
+   public void welcome()
+   private void play()
+}
+Game -> GameLogic: nextField()
+Game -> GameBoard: print()
+
+class Main {}
+Main -> Game: welcome()
+@enduml
