@@ -17,6 +17,10 @@ public class Game {
 
     private void play() {
         this.board.print();
-        this.logic.nextField();
+
+        while (!this.logic.hasWon()) {
+            this.logic.nextField();    
+            this.board.print();
+        }
     }
 }

@@ -14,4 +14,8 @@ public class GameLogic {
         Integer fieldIndex = this.prompt.nextInt();
         this.board.setField(fieldIndex, "x");
     }
+
+    public boolean hasWon() {
+        return false;
+    }
 }

@@ -4,10 +4,10 @@ class GameBoard {
     private ArrayList<String> fields = new ArrayList<String>();
 
     public GameBoard() {
-        this.clear();
+        this.createFields();
     }
 
-    private void clear() {
+    private void createFields() {
         for (int i = 1; i <= 10; i++) {
             this.fields.add(" ");
         }
@@ -27,6 +27,6 @@ class GameBoard {
     }
 
     public void setField(Integer fieldIndex, String player) {
-        System.out.println("To be implemented: GameBoard::setField");
+        this.fields.set(fieldIndex, player);
     }
 }
