@@ -22,6 +22,15 @@ public class GameLogic {
     }
 
     public boolean hasWon() {
-        return false;
+        String currentPlayer = this.playerManagement.getCurrentPlayer();
+        return this.board.hasWinningStrike(currentPlayer);
+    }
+
+    public String getWinningPlayer() {
+        if (!this.hasWon()) {
+            throw new RuntimeException("Nobody has won!");
+        }
+
+        return this.playerManagement.getCurrentPlayer();
     }
 }

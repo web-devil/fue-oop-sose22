@@ -11,4 +11,8 @@ public class PlayerManagement {
 
         return this.lastPlayer;
     }
+
+    public String getCurrentPlayer() {
+        return this.lastPlayer;
+    }
 }

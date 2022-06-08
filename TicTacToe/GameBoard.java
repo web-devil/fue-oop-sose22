@@ -29,4 +29,20 @@ class GameBoard {
     public void setField(Integer fieldIndex, String player) {
         this.fields.set(fieldIndex, player);
     }
+
+    public boolean hasWinningStrike(String player) {
+        return (
+            // horizontal
+               (this.fields.get(1) == player && this.fields.get(2) == player && this.fields.get(3) == player)
+            || (this.fields.get(4) == player && this.fields.get(5) == player && this.fields.get(6) == player)
+            || (this.fields.get(7) == player && this.fields.get(8) == player && this.fields.get(9) == player)
+            // vertikal
+            || (this.fields.get(1) == player && this.fields.get(4) == player && this.fields.get(7) == player)
+            || (this.fields.get(2) == player && this.fields.get(5) == player && this.fields.get(8) == player)
+            || (this.fields.get(3) == player && this.fields.get(6) == player && this.fields.get(9) == player)
+            // diagonal
+            || (this.fields.get(1) == player && this.fields.get(5) == player && this.fields.get(9) == player)
+            || (this.fields.get(3) == player && this.fields.get(5) == player && this.fields.get(7) == player)
+        );
+    }
 }

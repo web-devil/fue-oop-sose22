@@ -22,5 +22,8 @@ public class Game {
             this.logic.nextField();    
             this.board.print();
         }
+
+        System.out.print(this.logic.getWinningPlayer());
+        System.out.println(" hat gewonnen!");
     }
 }
